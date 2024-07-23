@@ -10,9 +10,8 @@ This is a simple 3-tier rule engine application that determines user eligibility
   - `rules.py`: Implements rule creation, combination, and evaluation logic.
   - `api.py`: Provides API functions to interact with the rule engine.
 - `static/`: Contains static files (CSS, JavaScript).
-  - `css/`: CSS styles.
-  - `js/`: JavaScript files.
-- `templates/`: Contains HTML templates.
+  - `style.css`: CSS styles.
+  - `script.js`: JavaScript files.
   - `index.html`: Main UI template.
 - `tests/`: Contains unit tests.
   - `test_rules.py`: Tests for rule creation, combination, and evaluation.
