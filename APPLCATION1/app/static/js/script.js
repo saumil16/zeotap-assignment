@@ -11,6 +11,9 @@ $(document).ready(function() {
             success: function(response) {
                 alert('Rule created successfully');
                 console.log(response.ast);
+
+                // Automatically copy the AST JSON value to the textarea
+                $('#ast').val(JSON.stringify(response.ast, null, 2));
             },
             error: function(error) {
                 alert('Error creating rule');

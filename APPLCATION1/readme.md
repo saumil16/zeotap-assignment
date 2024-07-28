@@ -5,14 +5,18 @@ This is a simple 3-tier rule engine application that determines user eligibility
 
 ## Project Structure
 - `app/`: Contains the main application code.
+  - `api.py`: Provides API functions to interact with the rule engine.
   - `ast.py`: Defines the AST data structure.
   - `database.py`: Handles database initialization and operations.
   - `rules.py`: Implements rule creation, combination, and evaluation logic.
-  - `api.py`: Provides API functions to interact with the rule engine.
-- `static/`: Contains static files (CSS, JavaScript).
-  - `style.css`: CSS styles.
-  - `script.js`: JavaScript files.
-  - `index.html`: Main UI template.
+  - `static/`: Contains static files (CSS, JavaScript).
+    - 'css/': 
+      - `style.css`: CSS styles.
+    - 'js/':
+      - `script.js`: JavaScript files.
+  - 'template/':
+      - `index.html`: Main UI template.
+  
 - `tests/`: Contains unit tests.
   - `test_rules.py`: Tests for rule creation, combination, and evaluation.
   - `test_api.py`: Tests for the API functions.
@@ -28,5 +32,21 @@ This is a simple 3-tier rule engine application that determines user eligibility
 3. Run the application:
     python main.py
 4. Open your web browser and go to `http://127.0.0.1:5000/`.
-5. Run the tests:
+5. Run the tests or directly browse it on the web browser with the help of sample examples given below:
     python -m unittest discover tests
+
+
+## Sample tests to try on UI
+1. Creating the rule
+    ((age > 30 AND department = 'Sales') OR (age < 25 AND department = 'Marketing')) AND (salary > 50000 OR experience > 5)
+  
+  Input the above line in create rule text box and press the create rule button. It will prompt as the rule being created if successfull and generates the relevant AST (autofill).
+
+2. Input a query to evaluate:
+      {
+        "age": 50,
+        "department": "Sales",
+        "salary": 60000,
+        "experience": 10
+      }
+    Input this json in "Data (JSON format):" and press evaluate button which will hence generate the reult as Trur or False.
