@@ -35,9 +35,9 @@ This project is a real-time weather monitoring system that retrieves weather dat
 
 ## Setup
 ###  Create a virtual environment 
-        python -m venv venv
+    python -m venv venv
 ###    Initialize the virtual environment 
-        venv/Scripts/activate
+    venv/Scripts/activate
 
 ### Install the required packages:
     pip install -r requirements.txt
@@ -46,7 +46,7 @@ This project is a real-time weather monitoring system that retrieves weather dat
     API_KEY=<your_actual_api_key_here>
 
 
-## Configure the system by updating `src/config.py` with other settings if needed.
+Configure the system by updating `src/config.py` with other settings if needed.
 
 ### Running the Application
     python src/main.py
