@@ -38,23 +38,23 @@ This project is a real-time weather monitoring system that retrieves weather dat
     - An OpenWeatherMap API key
 
 ### Build and Install
-   ### Create a virtual environment 
-        python -m venv venv
-   ### Initialize the virtual environment 
-        venv/Scripts/activate
-   ### Install the required packages:
-        pip install -r requirements.txt
-   ### Create a `.env` file in the root directory with your OpenWeatherMap API key:
-        API_KEY=<your_actual_api_key_here>
-   
-   Configure the system by updating `src/config.py` with other settings if needed.
+### Create a virtual environment 
+     python -m venv venv
+### Initialize the virtual environment 
+     venv/Scripts/activate
+### Install the required packages:
+     pip install -r requirements.txt
+### Create a `.env` file in the root directory with your OpenWeatherMap API key:
+     API_KEY=<your_actual_api_key_here>
 
-   ### Running the Application
-        python src/main.py
+Configure the system by updating `src/config.py` with other settings if needed.
 
-   This will generate the csv containing all the data in the `data` folder. User can analyze all the data in the csv generated in the `data` folder.
+### Running the Application
+     python src/main.py
 
-   ### Visualizing the data
-        python plot_weather_summary.py
+This will generate the csv containing all the data in the `data` folder. User can analyze all the data in the csv generated in the `data` folder.
 
-    This will plot the graph to visualize the data
+### Visualizing the data
+     python plot_weather_summary.py
+
+This will plot the graph to visualize the data
