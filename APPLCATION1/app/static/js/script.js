@@ -9,14 +9,16 @@ $(document).ready(function() {
             contentType: 'application/json',
             data: JSON.stringify({ rule_string: ruleString }),
             success: function(response) {
-                alert('Rule created successfully');
-                console.log(response.ast);
-
-                // Automatically copy the AST JSON value to the textarea
-                $('#ast').val(JSON.stringify(response.ast, null, 2));
+                if (response.status === 'success') {
+                    alert('Rule created successfully');
+                    console.log(response.ast);
+                    $('#ast').val(JSON.stringify(response.ast, null, 2));
+                } else {
+                    alert('Error: ' + response.message);
+                }
             },
             error: function(error) {
-                alert('Error creating rule');
+                alert('Error creating rule: ' + error.responseJSON.message);
                 console.log(error);
             }
         });
@@ -33,10 +35,14 @@ $(document).ready(function() {
             contentType: 'application/json',
             data: JSON.stringify({ ast: JSON.parse(ast), data: JSON.parse(data) }),
             success: function(response) {
-                $('#result').text('Result: ' + response.result);
+                if (response.status === 'success') {
+                    $('#result').text('Result: ' + response.result);
+                } else {
+                    alert('Error: ' + response.message);
+                }
             },
             error: function(error) {
-                alert('Error evaluating rule');
+                alert('Error evaluating rule: ' + error.responseJSON.message);
                 console.log(error);
             }
         });

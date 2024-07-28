@@ -1,18 +1,29 @@
 # app/rules.py
 from app.ast import Node
 
+class RuleEngineError(Exception):
+    pass
+
 def create_rule(rule_string):
-    # Placeholder implementation for demonstration purposes
-    age_node = Node("operand", value=("age", ">", 30))
-    department_node = Node("operand", value=("department", "=", "Sales"))
-    salary_node = Node("operand", value=("salary", ">", 50000))
-    experience_node = Node("operand", value=("experience", ">", 5))
+    # Basic validation for the rule string
+    if not isinstance(rule_string, str) or not rule_string:
+        raise RuleEngineError("Invalid rule string format.")
+    
+    # Placeholder implementation (actual parsing would be more complex)
+    try:
+        age_node = Node("operand", value=("age", ">", 30))
+        department_node = Node("operand", value=("department", "=", "Sales"))
+        salary_node = Node("operand", value=("salary", ">", 50000))
+        experience_node = Node("operand", value=("experience", ">", 5))
 
-    or_node1 = Node("operator", left=age_node, right=department_node, value="AND")
-    or_node2 = Node("operator", left=Node("operand", value=("age", "<", 25)), right=Node("operand", value=("department", "=", "Marketing")), value="AND")
-    and_node = Node("operator", left=Node("operator", left=or_node1, right=or_node2, value="OR"), right=Node("operator", left=salary_node, right=experience_node, value="OR"), value="AND")
+        and_node1 = Node("operator", left=age_node, right=department_node, value="AND")
+        and_node2 = Node("operator", left=salary_node, right=experience_node, value="AND")
 
-    return and_node
+        root_node = Node("operator", left=and_node1, right=and_node2, value="AND")
+
+        return root_node
+    except Exception as e:
+        raise RuleEngineError(f"Failed to create rule: {e}")
 
 def combine_rules(rules):
     if not rules:
@@ -28,11 +39,11 @@ def evaluate_node(node, data):
     if node.node_type == "operand":
         attribute, operator, value = node.value
         if operator == ">":
-            return data[attribute] > value
+            return data.get(attribute, None) > value
         elif operator == "<":
-            return data[attribute] < value
+            return data.get(attribute, None) < value
         elif operator == "=":
-            return data[attribute] == value
+            return data.get(attribute, None) == value
     elif node.node_type == "operator":
         if node.value == "AND":
             return evaluate_node(node.left, data) and evaluate_node(node.right, data)
@@ -40,8 +51,9 @@ def evaluate_node(node, data):
             return evaluate_node(node.left, data) or evaluate_node(node.right, data)
     return False
 
-
 def evaluate_rule(ast, data):
+    if not isinstance(data, dict):
+        raise RuleEngineError("Invalid data format.")
     return evaluate_node(ast, data)
 
 def serialize_ast(node):

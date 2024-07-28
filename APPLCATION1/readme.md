@@ -3,6 +3,13 @@
 ## Overview
 This is a simple 3-tier rule engine application that determines user eligibility based on attributes like age, department, income, and spend. The system uses an Abstract Syntax Tree (AST) to represent conditional rules and allows for dynamic creation, combination, and modification of these rules.
 
+## Features
+  - `Create Rule`: Allows users to create rules based on given attributes.
+  - `Combine Rules`: Combines multiple rules into a single AST.
+  - `Evaluate Rule`: Evaluates the given data against the rule and returns whether the user is eligible.
+  - `Error Handling (Bonus)`: Handles invalid rule strings and data formats and provides meaningful error messages to the user.
+
+
 ## Project Structure
 - `app/`: Contains the main application code.
   - `api.py`: Provides API functions to interact with the rule engine.
