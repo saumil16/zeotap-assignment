@@ -30,9 +30,9 @@ This project is a real-time weather monitoring system that retrieves weather dat
 ### Running the Main Script
     python src/main.py
 
-    This will generate the csv containing all the data in the `data` folder.
+This will generate the csv containing all the data in the `data` folder.
 
 ### Visualizing the data
     python plot_weather_summary.py
 
-    This will plot the graph to visualize the data
+This will plot the graph to visualize the data
