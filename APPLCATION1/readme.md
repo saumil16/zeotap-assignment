@@ -10,11 +10,11 @@ This is a simple 3-tier rule engine application that determines user eligibility
   - `database.py`: Handles database initialization and operations.
   - `rules.py`: Implements rule creation, combination, and evaluation logic.
   - `static/`: Contains static files (CSS, JavaScript).
-    - 'css/': 
+    - `css/`: 
       - `style.css`: CSS styles.
-    - 'js/':
+    - `js/`:
       - `script.js`: JavaScript files.
-  - 'template/':
+  - `templates/`:
       - `index.html`: Main UI template.
   
 - `tests/`: Contains unit tests.
