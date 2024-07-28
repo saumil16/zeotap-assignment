@@ -9,21 +9,27 @@
 <body>
     <div class="container">
         <h1>Rule Engine</h1>
-        <form id="create-rule-form">
+        <form id="create-rule-form" class="form-section">
             <label for="rule">Create Rule:</label>
             <input type="text" id="rule" name="rule" required>
             <button type="submit">Create Rule</button>
         </form>
 
-        <form id="evaluate-rule-form">
-            <label for="ast">AST (JSON format):</label>
-            <textarea id="ast" name="ast" required></textarea>
-            <label for="data">Data (JSON format):</label>
-            <textarea id="data" name="data" required></textarea>
+        <form id="evaluate-rule-form" class="form-section">
+            <div class="form-row">
+                <div class="form-col">
+                    <label for="ast">AST (JSON format):</label>
+                    <textarea id="ast" name="ast" required></textarea>
+                </div>
+                <div class="form-col">
+                    <label for="data">Data (JSON format):</label>
+                    <textarea id="data" name="data" required></textarea>
+                </div>
+            </div>
             <button type="submit">Evaluate Rule</button>
         </form>
 
-        <div id="result"></div>
+        <div id="result" class="result-section"></div>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
