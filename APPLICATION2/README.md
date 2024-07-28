@@ -47,7 +47,7 @@ This project is a real-time weather monitoring system that retrieves weather dat
 
 4. Configure the system by updating `src/config.py` with other settings if needed.
 
-### Running the Main Script
+### Running the Application
     python src/main.py
 
 This will generate the csv containing all the data in the `data` folder.
