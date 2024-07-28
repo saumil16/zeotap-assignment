@@ -32,24 +32,22 @@ This is a simple 3-tier rule engine application that determines user eligibility
 - `README.md`: This documentation file.
 
 ## Getting Started
-1. Install dependencies:
-    pip install -r requirements.txt
-2. Initialize the database:
-    python -c "from app.database import initialize_database; initialize_database()"
-3. Run the application:
-    python main.py
-4. Open your web browser and go to `http://127.0.0.1:5000/`.
-5. Run the tests or directly browse it on the web browser with the help of sample examples given below:
-    python -m unittest discover tests
+  ### Install dependencies:
+      pip install -r requirements.txt
+  ### Initialize the database:
+      python -c "from app.database import initialize_database; initialize_database()"
+  ### Run the application:
+      python main.py
+Open your web browser and go to `http://127.0.0.1:5000/`.
 
 
 ## Sample tests to try on UI
-1. Creating the rule
+### Creating the rule
     ((age > 30 AND department = 'Sales') OR (age < 25 AND department = 'Marketing')) AND (salary > 50000 OR experience > 5)
   
   Input the above line in create rule text box and press the create rule button. It will prompt as the rule being created if successfull and generates the relevant AST (autofill).
 
-2. Input a query to evaluate:
+### Input a query to evaluate:
       {
         "age": 50,
         "department": "Sales",
@@ -57,3 +55,8 @@ This is a simple 3-tier rule engine application that determines user eligibility
         "experience": 10
       }
     Input this json in "Data (JSON format):" and press evaluate button which will hence generate the reult as Trur or False.
+
+
+## Run predefined test cases:
+### Run the tests or directly browse it on the web browser with the help of sample examples given below:
+      python -m unittest discover tests
