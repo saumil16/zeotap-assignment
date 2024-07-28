@@ -41,6 +41,11 @@ $(document).ready(function() {
                 success: function(response) {
                     if (response.status === 'success') {
                         $('#result').text('Result: ' + response.result);
+                        if (response.result) {
+                            $('#result').removeClass('result-false').addClass('result-true');
+                        } else {
+                            $('#result').removeClass('result-true').addClass('result-false');
+                        }
                     } else {
                         alert('Error: ' + response.message);
                     }
