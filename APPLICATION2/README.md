@@ -34,18 +34,19 @@ This project is a real-time weather monitoring system that retrieves weather dat
 - `plot_weather_summary.py`: Script to generate and display visualizations of the daily weather summary.
 
 ## Setup
-1.  Create a virtual environment 
+###  Create a virtual environment 
         python -m venv venv
-    Initialize the virtual environment 
+###    Initialize the virtual environment 
         venv/Scripts/activate
 
-2. Install the required packages:
+### Install the required packages:
     pip install -r requirements.txt
 
-3. Create a `.env` file in the root directory with your OpenWeatherMap API key:
+### Create a `.env` file in the root directory with your OpenWeatherMap API key:
     API_KEY=<your_actual_api_key_here>
 
-4. Configure the system by updating `src/config.py` with other settings if needed.
+
+## Configure the system by updating `src/config.py` with other settings if needed.
 
 ### Running the Application
     python src/main.py
