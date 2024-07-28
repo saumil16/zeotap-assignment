@@ -1,17 +1,16 @@
 # Weather Monitoring System
 
+## Overview
 This project is a real-time weather monitoring system that retrieves weather data from the OpenWeatherMap API for major cities in India, processes the data, and generates daily summaries and alerts based on user-defined thresholds.
 
 ## Features
-- Real-time weather data retrieval
-- Temperature conversion from Kelvin to Celsius
-- Daily weather summaries with average, maximum, and minimum temperatures
-- Dominant weather condition determination
-- Alerting system for user-defined thresholds
-- Visualization of daily summaries
-
-## Bonus Features
-- Support for additional weather parameters (humidity, wind speed) in daily summaries
+- **Real-time weather data retrieval**
+- **Temperature conversion from Kelvin to Celsius**
+- **Daily weather summaries with average, maximum, and minimum temperatures**
+- **Dominant weather condition determination**
+- **Alerting system for user-defined thresholds**
+- **Visualization of daily summaries**
+- **Support for additional weather parameters (humidity, wind speed) in daily summaries (Bonus)**
 
 ## Project Structure
 
@@ -33,27 +32,29 @@ This project is a real-time weather monitoring system that retrieves weather dat
 - `README.md`: This documentation file.
 - `plot_weather_summary.py`: Script to generate and display visualizations of the daily weather summary.
 
-## Setup
-###  Create a virtual environment 
-    python -m venv venv
-###    Initialize the virtual environment 
-    venv/Scripts/activate
+## Instructions
+### Prerequisites
+    - Python 3.8 or higher
+    - An OpenWeatherMap API key
 
-### Install the required packages:
-    pip install -r requirements.txt
+### Build and Install
+   ### Create a virtual environment 
+        python -m venv venv
+   ### Initialize the virtual environment 
+        venv/Scripts/activate
+   ### Install the required packages:
+        pip install -r requirements.txt
+   ### Create a `.env` file in the root directory with your OpenWeatherMap API key:
+        API_KEY=<your_actual_api_key_here>
+   
+   Configure the system by updating `src/config.py` with other settings if needed.
 
-### Create a `.env` file in the root directory with your OpenWeatherMap API key:
-    API_KEY=<your_actual_api_key_here>
+   ### Running the Application
+        python src/main.py
 
+   This will generate the csv containing all the data in the `data` folder. User can analyze all the data in the csv generated in the `data` folder.
 
-Configure the system by updating `src/config.py` with other settings if needed.
+   ### Visualizing the data
+        python plot_weather_summary.py
 
-### Running the Application
-    python src/main.py
-
-This will generate the csv containing all the data in the `data` folder.
-
-### Visualizing the data
-    python plot_weather_summary.py
-
-This will plot the graph to visualize the data
+    This will plot the graph to visualize the data

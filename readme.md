@@ -17,4 +17,4 @@ OpenWeatherMap API
 ### For assignment 2
     cd zeotap-assignment/APPLICATION2
 
-Both the above assignments contains their respective readme file to build and run the project.
+Note - Both the above assignments contains their respective readme file to build and run the project.
