@@ -13,6 +13,26 @@ This project is a real-time weather monitoring system that retrieves weather dat
 ## Bonus Features
 - Support for additional weather parameters (humidity, wind speed) in daily summaries
 
+## Project Structure
+
+- `src/`: Contains the main application code.
+  - `__init__.py`: Initializes the src package.
+  - `config.py`: Configuration file with constants and settings.
+  - `data_retrieval.py`: Handles fetching weather data from the API.
+  - `data_processing.py`: Processes the fetched data and calculates daily summaries.
+  - `alerting.py`: Checks for alert conditions based on the processed data.
+  - `visualization.py`: Generates visualizations for the weather data.
+  - `main.py`: Main script to run the system.
+- `data/`: Directory for storing retrieved weather data and summaries.
+- `logs/`: Directory for storing logs.
+- `tests/`: Contains unit tests.
+  - `__init__.py`: Initializes the tests package.
+  - `test_weather_system.py`: Test cases to validate the system's functionality.
+- `.env`: Environment file to store the OpenWeatherMap API key.
+- `requirements.txt`: Lists the dependencies.
+- `README.md`: This documentation file.
+- `plot_weather_summary.py`: Script to generate and display visualizations of the daily weather summary.
+
 ## Setup
 1.  Create a virtual environment 
         python -m venv venv
